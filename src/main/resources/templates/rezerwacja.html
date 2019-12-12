@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head 
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>-->
+    <link href="https://fonts.googleapis.com/css?family=Calistoga|Dancing+Script:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+<!--    <link rel="stylesheet" th:href="@{/css/main.css}"/>-->
+    <!-- <link rel="stylesheet" th:href="@{../static/css/style.css}"/> -->
+	<link rel="stylesheet"href="../static/css/style.css"type="text/css"/>
+    <title>Rezerwacja</title>
+</head>
+<body>
+<div id="container"> 
+    <div id="logo">
+        Wypożyczalnia Samochodoawa LOGO
+    </div>
+    <!-- <div th:insert="fragments/banner.html :: div"></div> -->
+	 <div id="menu">
+      <div class="option">Home</div> 
+	  <div class="option">Rejestracja</div> 
+	  <div class="option">Logowanie</div> 
+	  <div style="clear:both;"></div>
+	</div>
+    <div style="clear: both;"></div>
+	<div id="topbar">
+	
+		<div id="logoimage">
+			<img src="../static/images/header-image.jpg" width="1000" height="300" >
+		</div>
+	</div>
+	<div id="sidebar">
+		<div class="optionL">Zasady</div>
+		<div class="optionL">Cennik</div> 
+		<div class="optionL">Kontakt</div>
+	</div>
+	
+    <div id="content">
+		<div class="login">
+			<form method="post" action="/rezerwacja">
+				<h2 th:text="#{login.login}"></h2>
+				<p>
+					<label for="data" class="sr-only">Od</label>
+					<input type="text" id="data" name="data" class="loginb" placeholder="data" required
+						   autofocus>
+				</p>
+				<p>
+					<label for="data" class="sr-only">Do</label>
+					<input type="data" id="data" name="data" class="loginb" placeholder="Hasło"
+						   required >
+				</p>
+				<input type="hidden"th:name="${_csrf.parameterName}"th:value="${_csrf.token}"/>
+				<div th:text="#{login.wrongCredentials}" th:if="${error}" class="alert alert-danger" role="alert"></div>
+				<button class="loginb" th:text="#{login.login}" type="submit"></button>
+				<a th:text="#{login.registration}" href="/registration"></a>
+			</form>
+		</div>
+    </div>
+	
+    <div id="footer">
+		  Copyright © 2019 Blu-Two sp. z o.o. - All Rights Reserved
+			Projekt, wykonanie i reklama strony - Staniec Przemysław
+    </div>
+</div>
+
+</body>

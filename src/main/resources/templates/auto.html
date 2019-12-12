@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:replace="fragments/head.html :: head(title='auto.page')">
+</head>
+<body>
+<div id="container">
+    <div id="logo">
+        Wypożyczalnia Samochodoawa LOGO
+    </div>
+
+    <div style="clear: both;"></div>
+    <header class="masthead mb-auto" th:insert="fragments/header.html :: nav"></header>
+
+    <div id="topbar">
+
+        <div id="logoimage">
+
+            <img src="/images/header-image.jpg" width="1000" height="300">
+
+        </div>
+        <div style="clear: both;"></div>
+        <div id="sidebar">
+            <a th:text="#{menu.zasady}" th:href="@{/zasady}" class="optionL"></a>
+            <a th:text="#{menu.cennik}" th:href="@{/home}" class="optionL"></a>
+            <a th:text="#{menu.kontakt}" th:href="@{/kontakt}" class="optionL"></a>
+        </div>
+
+        <div id="content">
+            <main role="main" class="container">
+                <div class="container-fluid d-flex h-100 p-3 mx-auto flex-column justify-content-center">
+                    <form th:object="${auto}" method="post" action="/auto">
+                        <h2 class="form-signin-heading" th:placeholder="#{auto.add}"></h2>
+                        <p>
+                            <label th:text="#{auto.marka}" for="marka" class="sr-only"></label>
+                            <input type="text" id="marka" th:field="*{marka}" class="form-control"
+                                   th:placeholder="#{auto.marka}"
+                                   required
+                                   autofocus>
+                        <div class="alert alert-danger" th:each="error: ${#fields.errors('marka')}"
+                             th:text="${error}"></div>
+                        </p>
+                        <p>
+                            <label th:text="#{auto.model}" for="model" class="sr-only"></label>
+                            <input type="text" id="model" th:field="*{model}" class="form-control"
+                                   th:placeholder="#{auto.model}"
+                                   required
+                                   autofocus>
+                        <div class="alert alert-danger" th:each="error: ${#fields.errors('model')}"
+                             th:text="${error}"></div>
+                        </p>
+                        <form>
+                            <p>Wybierz typ nadwozia:</p>
+                            <div>
+                                <input type="radio" id="typNadwozia"
+                                       name="typNadwozia" value="typNadwozia">
+                                <label for="typNadwozia">HATCHBACK</label>
+                                <input type="radio" id="typNadwozia"
+                                       name="typNadwozia" value="typNadwozia">
+                                <label for="typNadwozia">SUV</label>
+                                <input type="radio" id="typNadwozia"
+                                       name="typNadwozia" value="mail">
+                                <label for="typNadwozia">KOMBI</label>
+                            </div>
+                        </form>
+                        <p>
+                            <label th:text="#{auto.kolor}" for="kolor" class="sr-only"></label>
+                            <input type="text" id="kolor" th:field="*{kolor}" class="form-control"
+                                   th:placeholder="#{auto.kolor}"
+                                   required
+                                   autofocus>
+                        <div class="alert alert-danger" th:each="error: ${#fields.errors('kolor')}"
+                             th:text="${error}"></div>
+                        </p>
+                        <p>
+                            <label th:text="#{auto.rocznik}" for="rocznik" class="sr-only"></label>
+                            <input type="text" id="rocznik" th:field="*{rocznik}" class="form-control"
+                                   th:placeholder="#{auto.rocznik}"
+                                   required
+                                   autofocus>
+                        <div class="alert alert-danger" th:each="error: ${#fields.errors('rocznik')}"
+                             th:text="${error}"></div>
+                        </p>
+                        <p>
+                            <label th:text="#{auto.przebieg}" for="przebieg" class="sr-only"></label>
+                            <input type="text" id="przebieg" th:field="*{przebieg}" class="form-control"
+                                   th:placeholder="#{auto.przebieg}"
+                                   required
+                                   autofocus>
+                        <div class="alert alert-danger" th:each="error: ${#fields.errors('przebieg')}"
+                             th:text="${error}"></div>
+                        </p>
+                        <form>
+                            <p>Wybierz status auta:</p>
+                            <div>
+                                <input type="radio" id="status"
+                                       name="status" value="status">
+                                <label for="status">WYPOŻYCZONY</label>
+                                <input type="radio" id="status"
+                                       name="status" value="status">
+                                <label for="status">DOSTĘPNY</label>
+                                <input type="radio" id="status"
+                                       name="status" value="status">
+                                <label for="status">NIEDOSTĘPNY</label>
+                            </div>
+
+
+
+<!--                        <label for="image" th:text="#{auto.image}"></label>&ndash;&gt;-->
+<!--                        <div class="file btn btn-primary">-->
+<!--                            <label th:text="#{auto.image}"></label>-->
+<!--                            <template th:text="#{auto.image}"></template>-->
+<!--                            <input accept="image/*" th:field="*{files}" class="btn-primary form-control-file" id="image" multiple type="file"/>-->
+<!--                        </div>-->
+
+
+
+                        <input
+                                type="hidden"
+                                th:name="${_csrf.parameterName}"
+                                th:value="${_csrf.token}"/>
+                        <button class="btn btn-lg btn-primary btn-block" th:text="#{auto.add}"
+                                type="submit"></button>
+                    </form>
+                    </form>
+                </div>
+
+
+            </main>
+
+        </div>
+        <div id="foot">
+            <footer th:replace="fragments/footer.html :: footer"></footer>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

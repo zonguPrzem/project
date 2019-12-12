@@ -1,0 +1,8 @@
+<div sec:authorize="!isAuthenticated()" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org" >
+    <div class="menu">
+        <a th:text="#{menu.home}" th:href="@{/}" class="option"></a>
+        <a th:text="#{login.login}" th:href="@{/login}" class="option"></a>
+        <a th:text="#{registration.register}" th:href="@{/registration}" class="option"></a>
+        <div style="clear:both;"></div>
+    </div>
+</div>

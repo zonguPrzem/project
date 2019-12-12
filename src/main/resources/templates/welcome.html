@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head.html :: head(title='welcome.page')">
+</head>
+<body>
+<div id="container">
+    <div id="logo">
+        Wypożyczalnia Samochodoawa LOGO
+    </div>
+    <div th:insert="fragments/banner.html :: div"></div>
+
+    <div id="topbar">
+
+        <div id="logoimage">
+
+            <img src="/images/header-image.jpg" width="1000" height="300">
+
+        </div>
+        <div style="clear: both;"></div>
+        <div id="sidebar">
+            <a th:text="#{menu.zasady}" th:href="@{/zasady}" class="optionL"></a>
+            <a th:text="#{menu.cennik}" th:href="@{/home}" class="optionL"></a>
+            <a th:text="#{menu.kontakt}" th:href="@{/kontakt}" class="optionL"></a>
+        </div>
+
+        <div id="content">
+            Wypożyczalnia samochodów Dream Cars oferuje wynajem aut dla osób prywatnych i firm już od 49zł brutto/dzień
+            w
+            przypadku najmów długoterminowych.</br></br>
+
+            W naszej wypożyczalni posiadamy nowe, komfortowe auto osobowe głównie z rocznika 2018. Dysponujemy
+            samochodami
+            miejskimi, kompaktowymi oraz SUV w klasie Premium.</br></br>
+
+            Obsługujemy głównie klientów z województwa śląskiego oraz ościennych (małopolskie, dolnośląskie, łódzkie,
+            świętokrzyskie, opolskie). Wynajmowane auto podstawiamy klientowi na czas w wybranej lokalizacji.
+            Wszystkich zainteresowanym wypożyczeniem auto zapraszamy do zapoznania się z naszą ofertą cenową i wysłanie
+            formularza rezerwacji samochodu.</br></br>
+
+            Jeżeli jesteś zainteresowany opcją najmu długoterminowego zapraszamy do kontaktu - chętnie przygotujemy dla
+            Ciebie ofertę dopasowaną do Twoich indywidualnych potrzeb!
+        </div>
+        <div id="foot">
+            <footer th:replace="fragments/footer.html :: footer"></footer>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

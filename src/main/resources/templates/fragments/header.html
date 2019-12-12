@@ -1,0 +1,13 @@
+<header xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+    <div class="inner">
+        <nav sec:authorize="isAuthenticated()">
+            <div class="menu">
+                <a th:text="#{menu.home}" th:href="@{/}" class="option"></a>
+                <a th:text="#{navigation.reservation}" th:href="@{/home}" class="option"></a>
+                <a th:text="#{pracownik.logo}" th:href="@{/auto}" class="option"></a>
+                <a th:text="#{navigation.logout}" th:href="@{/logout}" class="option"></a>
+                <div style="clear:both;"></div>
+            </div>
+        </nav>
+    </div>
+</header>

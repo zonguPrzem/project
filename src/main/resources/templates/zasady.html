@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head.html :: head(title='zasady.page')">
+</head>
+<body>
+<div id="container">
+    <div id="logo">
+        Wypożyczalnia Samochodoawa LOGO
+    </div>
+
+    <div th:insert="fragments/banner.html :: div"></div>
+
+    <div id="topbar">
+
+        <div id="logoimage">
+
+            <img src="/images/header-image.jpg" width="1000" height="300">
+
+        </div>
+        <div style="clear: both;"></div>
+        <div id="sidebar">
+            <a th:text="#{menu.zasady}" th:href="@{/zasady}" class="optionL"></a>
+            <a th:text="#{menu.cennik}" th:href="@{/home}" class="optionL"></a>
+            <a th:text="#{menu.kontakt}" th:href="@{/kontakt}" class="optionL"></a>
+        </div>
+
+        <div id="content">
+            <H1 style="text-align: center; color:yellow;">Zasady wypożyczenia</H1>
+            Poniżej przedstawiamy najważniejsze zasady wypożyczania aut w wypożyczalni Dream Cars w formie odpowiedzi na najczęściej zadawane pytania.
+            <br/>
+            Jeżeli wśród poniższych zasad nie ma odpowiedzi na Twoje pytanie zachęcamy do kontaktu telefonicznego lub przez formularz kontaktowy.
+            <br/>
+            Jakie dokument są potrzebne, aby wynająć samochód?
+            Do wypożyczanie auto niezbędny jest dowód osobisty oraz prawo jazdy uprawniające do kierowania pojazdami osobowymi.
+            <br/>
+            Kto może wynająć samochód?
+            Warunkiem koniecznym do wynajmu samochodu jest ukończenie 18 roku życia i posiadanie niezbędnych dokumentów.
+            <br/>
+            Ile kosztuje wynajęcia samochodu?
+            Ceny wynajmu znajdują się w zakładce Cennik na naszej stronie internetowej.
+            <br/>
+            Jak można dokonać rezerwacji samochodu?
+            Auto można wstępnie zarezerwować poprzez stronę internetową przez formularz rezerwacji bądź telefonicznie pod numerem telefonu 730-878-421.
+            <br/>
+            Gdzie można odebrać zarezerwowany samochód?
+            Zarezerwowany samochód można odebrać w siedzibie naszej wypożyczalni pod adresem ul. Wróbli 28a w Katowicach. Wynajęte auto możemy również dostarczyć pod wskazany adres w umówiony dzień i godzinę.
+            <br/>
+            W jakich godzinach pracuje wypożyczalnia Dream Cars?
+            Wypożyczalnia działa 24h/dobę, a rezerwacja auto możliwa jest do godziny 22:00.
+            <br/>
+            Czy mogę wyjechać wypożyczonym autem poza granice Polski?
+            Wynajętym samochodem można podróżować po całej Europie z wyłączeniem Ukrainy.
+            <br/>
+            Czy samochód może prowadzić inna osoba, niż wynajmująca?
+            Samochód może prowadzić osoba która nie podpisywała umowy najmu, ale musi być ona zgłoszona w trakcie podpisywania umowy.
+            <br/>
+            Jak wygląda sprawa paliwa i tankowań?
+            Wydając samochód jest on czysty i zatankowany do pełna i w takim samym stanie powinien zostać zwrócony do wypożyczalni. Jeżeli auto po zwrocie wymaga zatankowania lub umycia zostanie to potrącone z kaucji.
+            <br/>
+            Co zrobić w przypadku awarii auto lub zdarzenia drogowego?
+            W przypadku awarii wynajętego auto należy bezzwłocznie skontaktować się z nami telefonicznie pod numerem telefonu 730-878-421 w celu uzgodnienia podstawienia auto zastępczego. W przypadku zaistnienia wypadku drogowego należy wezwać policję jak również poinformować nas o tym fakcie.
+            <br/>
+            Jakie są konsekwencje w przypadku kolizji wynajętego auto?
+            W przypadku kolizji samochód posiada pełne ubezpieczenie i wynajmujący nie ponosi żadnych konsekwencji finansowych, chyba że do wypadku doszło podczas prowadzenia pojazdu pod wpływem alkoholu lub substancji odurzających.
+            <br/>
+            Czy jest możliwość wypożyczenia akcesoriów dodatkowych do samochodu (nawigacja GPS/fotelik samochodowy/itp.)?
+            Za dodatkową opłatą można w wypożyczalni doposażyć samochód w dodatkowe akcesoria typu fotelik dla dziecka, bagażnik dachowy, nawigację GPS, itp. Jeżeli potrzebujesz dodatkowych akcesoriów do auto zgłoś ten fakt w formularzu rezerwacji lub podczas rozmowy telefonicznej z naszym pracownikiem.
+        </div>
+
+    </div>
+    <footer th:replace="fragments/footer.html :: footer"></footer>
+</div>
+</body>
+</html>
