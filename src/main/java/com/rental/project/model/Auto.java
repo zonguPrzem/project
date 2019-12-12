@@ -26,8 +26,8 @@ public class Auto {
     private String model;
 
     @NotNull
-    @Enumerated(EnumType.STRING)
-    private TypNadwozia typ_nadwozia;
+//    @Enumerated(EnumType.STRING)
+    private String typ_nadwozia;
 
     @NotEmpty
     @NotNull
@@ -45,8 +45,8 @@ public class Auto {
     private String przebieg;
 
     @NotNull
-    @Enumerated(EnumType.STRING)
-    private AutoStatus status;
+//    @Enumerated(EnumType.STRING)
+    private String status;
 
     @NotEmpty
     @NotNull
@@ -103,11 +103,11 @@ public class Auto {
         this.model = model;
     }
 
-    public TypNadwozia getTyp_nadwozia() {
+    public @NotNull String getTyp_nadwozia() {
         return typ_nadwozia;
     }
 
-    public void setTyp_nadwozia(TypNadwozia typ_nadwozia) {
+    public void setTyp_nadwozia(String typ_nadwozia) {
         this.typ_nadwozia = typ_nadwozia;
     }
 
@@ -135,11 +135,11 @@ public class Auto {
         this.przebieg = przebieg;
     }
 
-    public AutoStatus getStatus() {
+    public @NotNull String getStatus() {
         return status;
     }
 
-    public void setStatus(AutoStatus status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

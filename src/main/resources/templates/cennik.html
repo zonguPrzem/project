@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head.html :: head(title='cennik.page')">
+</head>
+<body>
+<div id="container">
+    <div id="logo">
+        Wypożyczalnia Samochodoawa LOGO
+    </div>
+    <div style="clear: both;"></div>
+    <header class="masthead mb-auto"  th:insert="fragments/header.html :: nav"></header>
+
+    <div id="topbar">
+
+        <div id="logoimage">
+
+            <img src="/images/header-image.jpg" width="1000" height="300" alt="Grafika Strony">
+
+        </div>
+        <div style="clear: both;"></div>
+        <div id="sidebar">
+            <a th:text="#{menu.zasady}" th:href="@{/zasady}" class="optionL"></a>
+            <a th:text="#{menu.kontakt}" th:href="@{/kontakt}" class="optionL"></a>
+        </div>
+
+        <div id="content">
+
+
+        </div>
+        <div id="foot">
+            <footer th:replace="fragments/footer.html :: footer"></footer>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

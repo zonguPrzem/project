@@ -1,10 +1,7 @@
 package com.rental.project.dtos;
 
 import org.springframework.web.multipart.MultipartFile;
-import com.rental.project.model.AutoStatus;
-import com.rental.project.model.TypNadwozia;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
@@ -20,8 +17,8 @@ public class AutoRegistration {
     private String model;
 
     @NotNull
-    @Enumerated(EnumType.STRING)
-    private TypNadwozia typ_nadwozia;
+//    @Enumerated(EnumType.STRING)
+    private String typ_nadwozia;
 
     @NotEmpty
     @NotNull
@@ -36,8 +33,8 @@ public class AutoRegistration {
     private String przebieg;
 
     @NotNull
-    @Enumerated(EnumType.STRING)
-    private AutoStatus status;
+//    @Enumerated(EnumType.STRING)
+    private String status;
 
     @NotEmpty
     @NotNull
@@ -74,12 +71,20 @@ public class AutoRegistration {
         this.model = model;
     }
 
-    public TypNadwozia getTyp_nadwozia() {
+    public String getTyp_nadwozia() {
         return typ_nadwozia;
     }
 
-    public void setTyp_nadwozia(TypNadwozia typ_nadwozia) {
+    public void setTyp_nadwozia(String typ_nadwozia) {
         this.typ_nadwozia = typ_nadwozia;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getRocznik() {
@@ -106,13 +111,6 @@ public class AutoRegistration {
         this.przebieg = przebieg;
     }
 
-    public AutoStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(AutoStatus status) {
-        this.status = status;
-    }
 
     public String getKwota() {
         return kwota;

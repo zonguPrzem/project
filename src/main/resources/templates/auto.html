@@ -27,6 +27,7 @@
 
         <div id="content">
             <main role="main" class="container">
+                <h1>Dodawanie auta do rejestru</h1>
                 <div class="container-fluid d-flex h-100 p-3 mx-auto flex-column justify-content-center">
                     <form th:object="${auto}" method="post" action="/auto">
                         <h2 class="form-signin-heading" th:placeholder="#{auto.add}"></h2>
@@ -47,22 +48,23 @@
                                    autofocus>
                         <div class="alert alert-danger" th:each="error: ${#fields.errors('model')}"
                              th:text="${error}"></div>
-                        </p>
-                        <form>
-                            <p>Wybierz typ nadwozia:</p>
-                            <div>
-                                <input type="radio" id="typNadwozia"
-                                       name="typNadwozia" value="typNadwozia">
-                                <label for="typNadwozia">HATCHBACK</label>
-                                <input type="radio" id="typNadwozia"
-                                       name="typNadwozia" value="typNadwozia">
-                                <label for="typNadwozia">SUV</label>
-                                <input type="radio" id="typNadwozia"
-                                       name="typNadwozia" value="mail">
-                                <label for="typNadwozia">KOMBI</label>
-                            </div>
-                        </form>
+                        </select>
                         <p>
+                            <label th:text="#{auto.TypNadwozia}" for="typ_nadwozia" class="sr-only"></label>
+                            <input type="text" id="typ_nadwozia" th:field="*{typ_nadwozia}" class="form-control"
+                                   th:placeholder="#{auto.TypNadwozia}"
+                                   required
+                                   autofocus>
+                        <div class="alert alert-danger" th:each="error: ${#fields.errors('kwota')}"
+                             th:text="${error}"></div>
+                        </p>
+<!--                        </p>-->
+<!--                        <label th:text="#{auto.TypNadwozia}" for="model" class="sr-only"></label>-->
+<!--                        <select name="TypNadwozia">-->
+<!--                            <option th:each="TypNadwoziaOpt : ${T(com.rental.project.model.TypNadwozia).values()}"-->
+<!--                                    th:value="${TypNadwoziaOpt}" th:text="${TypNadwoziaOpt}"id="TypNadwoziaOpt" th:field="*{typ_nadwozia}"></option>-->
+<!--                        </select>-->
+<!--                        <p>-->
                             <label th:text="#{auto.kolor}" for="kolor" class="sr-only"></label>
                             <input type="text" id="kolor" th:field="*{kolor}" class="form-control"
                                    th:placeholder="#{auto.kolor}"
@@ -89,30 +91,40 @@
                         <div class="alert alert-danger" th:each="error: ${#fields.errors('przebieg')}"
                              th:text="${error}"></div>
                         </p>
-                        <form>
-                            <p>Wybierz status auta:</p>
-                            <div>
-                                <input type="radio" id="status"
-                                       name="status" value="status">
-                                <label for="status">WYPOŻYCZONY</label>
-                                <input type="radio" id="status"
-                                       name="status" value="status">
-                                <label for="status">DOSTĘPNY</label>
-                                <input type="radio" id="status"
-                                       name="status" value="status">
-                                <label for="status">NIEDOSTĘPNY</label>
-                            </div>
+                        <p>
+                            <label th:text="#{auto.status}" for="status" class="sr-only"></label>
+                            <input type="text" id="status" th:field="*{status}" class="form-control"
+                                   th:placeholder="#{auto.status}"
+                                   required
+                                   autofocus>
+                        <div class="alert alert-danger" th:each="error: ${#fields.errors('status')}"
+                             th:text="${error}"></div>
+                        </p>
 
+<!--                        <label th:text="#{auto.status}" for="model" class="sr-only"></label>-->
+<!--                        <select name="AutoStatus">-->
+<!--                            <option th:each="status : ${T(com.rental.project.model.AutoStatus).values()}"-->
+<!--                                    th:value="${status}" th:text="${status}"id="status" th:field="*{status}"></option>-->
 
+<!--                        </select>-->
+                        <p>
+                            <label th:text="#{auto.kwota}" for="kwota" class="sr-only"></label>
+                            <input type="text" id="kwota" th:field="*{kwota}" class="form-control"
+                                   th:placeholder="#{auto.kwota}"
+                                   required
+                                   autofocus>
+                        <div class="alert alert-danger" th:each="error: ${#fields.errors('kwota')}"
+                             th:text="${error}"></div>
+                        </p>
 
-<!--                        <label for="image" th:text="#{auto.image}"></label>&ndash;&gt;-->
+<!--                        <div class="form-group">-->
+<!--                        <label for="image" th:text="#{auto.image}"></label>-->
 <!--                        <div class="file btn btn-primary">-->
-<!--                            <label th:text="#{auto.image}"></label>-->
-<!--                            <template th:text="#{auto.image}"></template>-->
+<!--                            <label th:text="#{question.upload}"></label>-->
+<!--                            <template th:text="#{question.uploaded}"></template>-->
 <!--                            <input accept="image/*" th:field="*{files}" class="btn-primary form-control-file" id="image" multiple type="file"/>-->
 <!--                        </div>-->
-
-
+<!--                    </div>-->
 
                         <input
                                 type="hidden"
@@ -120,7 +132,7 @@
                                 th:value="${_csrf.token}"/>
                         <button class="btn btn-lg btn-primary btn-block" th:text="#{auto.add}"
                                 type="submit"></button>
-                    </form>
+
                     </form>
                 </div>
 

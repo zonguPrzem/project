@@ -1,5 +1,6 @@
 package com.rental.project.controllers;
 
+import com.rental.project.model.Auto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,6 +20,7 @@ public class AutoController {
     private final AutoService autoService;
 
 
+
     public AutoController(AutoService autoService) {
         this.autoService = autoService;
     }
@@ -35,9 +37,10 @@ public class AutoController {
         if (bindingResult.hasErrors()) {
             return "auto";
         } else {
-            var persisted = autoService.createAuto(registration);
-            return "redirect:/auto/" + persisted.getId();
+            var cennik = autoService.createAuto(registration);
+            return "redirect:/cennik";
         }
     }
+
 
 }

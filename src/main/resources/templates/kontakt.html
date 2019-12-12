@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:replace="fragments/head.html :: head(title='kontakt.page')">
+</head>
+<body>
+<div id="container">
+    <div id="logo">
+        Wypożyczalnia Samochodoawa LOGO
+    </div>
+    <div th:insert="fragments/banner.html :: div"></div>
+
+    <div id="topbar">
+
+        <div id="logoimage">
+
+            <img src="/images/header-image.jpg" width="1000" height="300"alt="Grafika Strony">
+
+        </div>
+        <div style="clear: both;"></div>
+        <div id="sidebar">
+            <a th:text="#{menu.zasady}" th:href="@{/zasady}" class="optionL"></a>
+            <a th:text="#{menu.cennik}" th:href="@{/cennik}" class="optionL"></a>
+        </div>
+
+        <br id="content">
+        <div style="text-align: center">
+            Wypożyczalnia Samochodów LOGO
+            ul. Śliska 8, 40-527 Katowice
+            </br></br>
+            Skontaktuj się z nami:
+            e-mail: biuro@logo.com.pl
+            Telefon: 730-222-111 lub 333-881-883
+            </br></br>
+            Dane rejestrowe:
+            LOGO sp. z o.o.
+            ul. Śliska Stroma 4/25, 50-078 Wrocław
+            NIP: 89988988, Regon: 2222222222
+        </div>
+        </div>
+        <div id="foot">
+            <footer th:replace="fragments/footer.html :: footer"></footer>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

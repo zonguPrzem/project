@@ -41,5 +41,13 @@ public class HomeController {
         model.addAttribute("user", securityService.getLoggedInUser());
         return "home";
     }
+    @GetMapping("/cennik")
+    public String getCennik() {
+        return "cennik";
+    }
+    @GetMapping("/kontakt")
+    public String getKontakt() {
+        return "kontakt";
+    }
 
 }
