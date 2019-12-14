@@ -28,17 +28,14 @@ public class User {
 //    @Size(min = 3)
     @NotEmpty
     @NotNull
-    @Column(unique = true)
     private String name;
 
     @NotEmpty
     @NotNull
-    @Column(unique = true)
     private String lastName;
 
     @NotEmpty
     @NotNull
-    @Column(unique = true)
     private String addres;
 
     private boolean active;

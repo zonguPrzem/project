@@ -27,8 +27,6 @@ public class RegistrationController {
             result.rejectValue("password", "registration.unmatchedPasswords");
         } else if (userService.checkIfMailIsTaken(user.getEmail())) {
             result.rejectValue("email", "registration.emailExists");
-        } else if (userService.checkIfNameIsTaken(user.getName())) {
-            result.rejectValue("name", "registration.nameExists");
         } else if (!result.hasErrors()) {
             userService.createUser(user);
             return "redirect:/thank-you";

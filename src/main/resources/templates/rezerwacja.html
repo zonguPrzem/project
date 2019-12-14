@@ -1,14 +1,7 @@
 <!DOCTYPE html>
-<html lang="pl">
-<head 
-  <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!--    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>-->
-    <link href="https://fonts.googleapis.com/css?family=Calistoga|Dancing+Script:400,700&display=swap&subset=latin-ext" rel="stylesheet">
-<!--    <link rel="stylesheet" th:href="@{/css/main.css}"/>-->
-    <!-- <link rel="stylesheet" th:href="@{../static/css/style.css}"/> -->
-	<link rel="stylesheet"href="../static/css/style.css"type="text/css"/>
-    <title>Rezerwacja</title>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">>
+<head >
+	<head th:replace="fragments/head.html :: head(title='zasady.page')">
 </head>
 <body>
 <div id="container"> 
@@ -16,7 +9,10 @@
         Wypożyczalnia Samochodoawa LOGO
     </div>
     <!-- <div th:insert="fragments/banner.html :: div"></div> -->
-	 <div id="menu">
+	<div style="clear: both;"></div>
+	<header class="masthead mb-auto"  th:insert="fragments/header.html :: nav"></header>
+
+	<div id="menu">
       <div class="option">Home</div> 
 	  <div class="option">Rejestracja</div> 
 	  <div class="option">Logowanie</div> 
